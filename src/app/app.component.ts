@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Student } from './shared/student.module';
-import { StudentService } from './shared/student.service';
+import {Component, OnInit} from '@angular/core';
+import {Student} from './shared/student.module';
+import {StudentService} from './shared/student.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,14 @@ import { StudentService } from './shared/student.service';
 export class AppComponent implements OnInit {
   title: string = 'Pvi Registration';
   students: Student[] = [];
+  idNumber: string = '';
+  firstName: string = ''
+  lastName: string = ''
+  email: string = ''
+  phoneNumber: string = ''
 
-  constructor(private studentService: StudentService) {}
+  constructor(private studentService: StudentService) {
+  }
 
   ngOnInit(): void {
     console.log('HI How are you ');
@@ -25,8 +31,27 @@ export class AppComponent implements OnInit {
     this.studentService.getAllStudents().subscribe((result) => {
       console.log('Data: ', result);
       this.students = result;
-    },error => {
+    }, error => {
       console.log('Error Occured while Getting Students: ', error);
+      alert('Error Occured while Getting Students')
+    });
+  }
+
+  createStudent(): void {
+    console.log("id number is ", this.idNumber)
+    console.log("id number is ", this.firstName)
+    console.log("id number is ", this.lastName)
+    console.log("id number is ", this.email)
+    console.log("id number is ", this.phoneNumber)
+
+    let student: Student = new Student(this.firstName, this.lastName, this.email, this.phoneNumber, this.idNumber);
+    student.id = null;
+
+    this.studentService.createStudent(student).subscribe(res => {
+      alert('Successfully Created student');
+      this.getAllStudents();
+    }, error => {
+      alert('Failed to create student');
     });
   }
 

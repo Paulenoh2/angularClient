@@ -16,3 +16,16 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+input{
+  padding: 15px;
+  margin: 10px;
+}
+
+button{
+  width: 25%;
+  height: 30px;
+  font-weight: bolder;
+  background-color: green;
+  color: white;
+}

@@ -1,4 +1,3 @@
-
 <h1>{{title}}</h1>
 <!DOCTYPE html>
 <html>
@@ -11,7 +10,7 @@
 
 <table>
   <tr>
-    <th>Id </th>
+    <th>Id</th>
     <th>Id Number</th>
     <th>First Name</th>
     <th>Last Name</th>
@@ -29,6 +28,17 @@
   </tr>
 </table>
 
+<div style="text-align: center">
+
+  <form>
+    <input placeholder="Id Number" name="idNumber" [(ngModel)]="idNumber"><br>
+    <input placeholder="First Name" name="firstName" [(ngModel)]="firstName"><br>
+    <input placeholder="Last Name" name="lastName" [(ngModel)]="lastName"><br>
+    <input placeholder="Email" name="email" [(ngModel)]="email"><br>
+    <input placeholder="Phone Number" name="phoneNumber" [(ngModel)]="phoneNumber"><br>
+    <button (click)="createStudent()">Submit</button>
+  </form>
+</div>
 </body>
 </html>
 

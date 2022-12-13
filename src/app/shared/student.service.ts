@@ -27,5 +27,7 @@ export class StudentService {
 
   updateStudent(student: Student): Observable<Student> {
     return this.http.put<Student>('http://localhost:8080/students', student);
+
+
   }
 }

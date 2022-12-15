@@ -43,3 +43,9 @@ input, .btn{
   font-size: larger;
   padding: inherit;
 }
+
+.main-div{
+  display:flex;
+  gap: 10px;
+  text-align: center
+}

@@ -10,11 +10,12 @@ import {StudentService} from './shared/student.service';
 export class AppComponent implements OnInit {
   title: string = 'Pvi Registration';
   students: Student[] = [];
-  idNumber: string = '';
-  firstName: string = ''
-  lastName: string = ''
-  email: string = ''
-  phoneNumber: string = ''
+  idNumber: string | undefined = '';
+  firstName: string | undefined = ''
+  lastName: string | undefined = ''
+  email: string | undefined = ''
+  phoneNumber: string | undefined = ''
+  id: number = 0;
 
   constructor(private studentService: StudentService) {
   }
@@ -55,20 +56,41 @@ export class AppComponent implements OnInit {
     });
   }
 
-  deleteStudentById(id:number): void{
-
-    this.studentService.deleteStudentById(id).subscribe((result) =>{
- 
-    this.getAllStudents();
-    alert('student deleted successfull');
-   },error => {
-    console.log(error);
-     this.getAllStudents();
-  //  alert('the was an error ');
-   })
-    
+  populateStudent(student: Student): void {
+    this.id = student.id;
+    this.idNumber = student.idNumber;
+    this.firstName = student.firstName;
+    this.lastName = student.lastName;
+    this.email = student.email;
+    this.phoneNumber = student.phoneNumber;
   }
-    
+
+  updateStudent(): void {
+
+    let student: Student = new Student(this.firstName, this.lastName, this.email, this.phoneNumber, this.idNumber, this.id);
+
+    this.studentService.updateStudent(student).subscribe(res => {
+      alert('Successfully updated student');
+      this.getAllStudents();
+    }, error => {
+      alert('Failed to update student');
+    });
+  }
+
+  deleteStudentById(id: number): void {
+
+    this.studentService.deleteStudentById(id).subscribe((result) => {
+
+      this.getAllStudents();
+      alert('student deleted successfull');
+    }, error => {
+      console.log(error);
+      this.getAllStudents();
+      //  alert('the was an error ');
+    })
+
+  }
+
   // getStudents(): void {
   //   console.log('I am getStudents');
 

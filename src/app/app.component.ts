@@ -55,6 +55,20 @@ export class AppComponent implements OnInit {
     });
   }
 
+  deleteStudentById(id:number): void{
+
+    this.studentService.deleteStudentById(id).subscribe((result) =>{
+ 
+    this.getAllStudents();
+    alert('student deleted successfull');
+   },error => {
+    console.log(error);
+     this.getAllStudents();
+  //  alert('the was an error ');
+   })
+    
+  }
+    
   // getStudents(): void {
   //   console.log('I am getStudents');
 

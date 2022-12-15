@@ -17,15 +17,29 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-input{
+input, .btn{
   padding: 15px;
   margin: 10px;
 }
 
-button{
-  width: 25%;
+.button{
+  width: 60px;
   height: 30px;
   font-weight: bolder;
   background-color: green;
   color: white;
+  border: green solid 2px;
+  margin-left: 5px;
+}
+
+.button:hover{
+  background-color:#6b965e ;
+  cursor: pointer;
+}
+
+.btn{
+  width: 210px;
+  padding: 10px;
+  font-size: larger;
+  padding: inherit;
 }

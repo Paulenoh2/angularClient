@@ -16,6 +16,7 @@
     <th>Last Name</th>
     <th>Email</th>
     <th>Phone Number</th>
+    <th></th>
   </tr>
 
   <tr *ngFor="let s of students">
@@ -25,6 +26,13 @@
     <td>{{s.lastName}}</td>
     <td>{{s.email}}</td>
     <td>{{s.phoneNumber}}</td>
+    <td>
+      <span>
+        <button class="button" (click)="deleteStudentById(s.id)">Delete</button>
+        <button class="button" >Edit</button>
+
+      </span>
+    </td>
   </tr>
 </table>
 
@@ -36,7 +44,7 @@
     <input placeholder="Last Name" name="lastName" [(ngModel)]="lastName"><br>
     <input placeholder="Email" name="email" [(ngModel)]="email"><br>
     <input placeholder="Phone Number" name="phoneNumber" [(ngModel)]="phoneNumber"><br>
-    <button (click)="createStudent()">Submit</button>
+    <button (click)="createStudent()" class="button btn">Submit </button>
   </form>
 </div>
 </body>

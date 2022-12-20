@@ -44,6 +44,12 @@ input, .btn{
   padding: inherit;
 }
 
+.create-button-div button{
+  float: right;
+  margin: 20px;
+  /* to curve the site of a button or a div or a page. */
+  /* border-radius: 40%; */
+}
 .main-div{
   display:flex;
   gap: 10px;

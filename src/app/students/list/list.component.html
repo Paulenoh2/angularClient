@@ -1,0 +1,31 @@
+<h2>Manage Students List</h2>
+<div class="create-button-div">
+  <button class="button" (click)="showCreateForm()">Create</button>
+</div>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Id Number</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th></th>
+  </tr>
+
+  <tr *ngFor="let s of students">
+    <td>{{s.id}}</td>
+    <td>{{s.idNumber}}</td>
+    <td>{{s.firstName}}</td>
+    <td>{{s.lastName}}</td>
+    <td>{{s.email}}</td>
+    <td>{{s.phoneNumber}}</td>
+    <td>
+      <span>
+        <button class="button" (click)="deleteStudentById(s.id)">Delete</button>
+        <button class="button" (click)="populateStudent(s)">Edit</button>
+
+      </span>
+    </td>
+  </tr>
+</table>

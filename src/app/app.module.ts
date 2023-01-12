@@ -7,9 +7,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { StudentService } from './shared/student.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
+import { EditComponent } from './students/edit/edit.component';
+import { ListComponent } from './students/list/list.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

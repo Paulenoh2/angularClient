@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+      margin: 20px;
+  
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  input, .btn{
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  .button{
+    width: 60px;
+    height: 30px;
+    font-weight: bolder;
+    background-color: green;
+    color: white;
+    border: green solid 2px;
+    margin-left: 5px;
+  }
+  
+  .button:hover{
+    background-color:#6b965e ;
+    cursor: pointer;
+  }
+  
+  .btn{
+    width: 210px;
+    padding: 10px;
+    font-size: larger;
+    padding: inherit;
+  }
+  
+  .create-button-div button{
+    float: right;
+    margin: 20px;
+    /* to curve the site of a button or a div or a page. */
+    /* border-radius: 40%; */
+  }
+  .main-div{
+    display:flex;
+    gap: 10px;
+    text-align: center;
+
+  }
+  
